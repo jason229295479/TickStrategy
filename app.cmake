@@ -45,7 +45,7 @@ target_link_libraries(${PROJECT_NAME}
 	libcurl.so  
 	libpq.so
 	libpqxx.so
-    libpthread.so
+    	libpthread.so
 	)
 target_link_libraries(${PROJECT_NAME})
 
