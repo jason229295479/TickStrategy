@@ -1,0 +1,7 @@
+{
+  "dbip": "47.100.92.10",
+  "dbname": "postgres",
+  "dbuser": "postgres",
+  "dbpassword": "admin123456",
+  "dbport": "5432"
+}

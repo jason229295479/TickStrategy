@@ -1,0 +1,3 @@
+product multiplier spread intFactor nightEnd afternoon clearTime
+rb 10 1 10 22:59:00 15:00:00 22:59:00
+ru 10 5 10 22:59:00 15:00:00 22:59:00

@@ -1,0 +1,2 @@
+contract count
+rb2110 0

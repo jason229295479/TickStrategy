@@ -1,0 +1,55 @@
+#ʹ��source_group����Ŀ¼�ṹ�ڵ�
+# function(assign_source_group)
+	# foreach(_source IN ITEMS ${ARGN})
+		# if(IS_ABSOLUTE "${_source}")
+			# file(RELATIVE_PATH _source_rel "${CMAKE_CURRENT_SOURCE_DIR}" "${_source}")
+		# else()
+			# set(_source_rel "${_source}")
+		# endif()
+	
+		# get_filename_component(source_path "${source}" PATH)
+		# string(REPLACE "/" "\\" SOURCE_PATH_MSVC "${source_path}")
+		# source_group("${SOURCE_PATH_MSVC}" FILES "${source}")
+	# endforeach()
+# endfunction(assign_source_group)
+
+function(assign_source_group)
+	foreach(source IN ITEMS ${ARGN})
+		get_filename_component(source_path "${source}" PATH)
+		string(REPLACE "/" "\\" SOURCE_PATH_MSVC "${source_path}")
+		source_group("${SOURCE_PATH_MSVC}" FILES "${source}")
+	endforeach()
+endfunction(assign_source_group)
+
+
+function(get_srcfile_list)
+	set(CURRENT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
+	foreach(source IN ITEMS ${ARGN})
+		string(REPLACE ${CURRENT_PATH}/ ""  CURRENT_SRC_PATH "${source}")
+		list(APPEND SOURCE_TREE "${CURRENT_SRC_PATH}")
+	endforeach()
+	set(CURRENT_SRC_TREE ${SOURCE_TREE} PARENT_SCOPE)
+endfunction(get_srcfile_list)
+
+function(build_file_tree)
+	FILE(GLOB_RECURSE ALL_SOURCE_LIST . "*.h" "*.hpp" "*.cpp" "*.c" "*.ui" "*.qrc")
+	get_srcfile_list(${ALL_SOURCE_LIST})
+	assign_source_group(${CURRENT_SRC_TREE})
+	set(SOURCE_TREE ${CURRENT_SRC_TREE} PARENT_SCOPE)
+endfunction(build_file_tree)
+
+
+function(init_include_path)
+	#sometime have other dll need to be dynamic use
+	FILE(GLOB_RECURSE ALL_SOURCE_LIST . "*.h" "*.hpp" "*.dll")
+	# FILE(GLOB_RECURSE ALL_SOURCE_LIST . "*.h" "*.hpp")
+	assign_include_path(${ALL_SOURCE_LIST})
+endfunction(init_include_path)
+
+function(assign_include_path)
+	foreach(source IN ITEMS ${ARGN})
+		get_filename_component(head_path "${source}" PATH)
+		string(REPLACE "/" "\\" HEAD_PATH_MSVC "${head_path}")
+		INCLUDE_DIRECTORIES(${HEAD_PATH_MSVC})
+	endforeach()
+endfunction()

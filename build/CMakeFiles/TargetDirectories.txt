@@ -1,0 +1,5 @@
+/home/jason/ProjectMarketService/build/CMakeFiles/rebuild_cache.dir
+/home/jason/ProjectMarketService/build/CMakeFiles/edit_cache.dir
+/home/jason/ProjectMarketService/build/tick_strategy/CMakeFiles/rebuild_cache.dir
+/home/jason/ProjectMarketService/build/tick_strategy/CMakeFiles/edit_cache.dir
+/home/jason/ProjectMarketService/build/tick_strategy/CMakeFiles/tick_strategy.dir

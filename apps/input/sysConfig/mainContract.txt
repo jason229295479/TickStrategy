@@ -1,0 +1,3 @@
+product contract exchange closeIntraday
+rb rb2110 SHFE false
+ru ru2109 SHFE false

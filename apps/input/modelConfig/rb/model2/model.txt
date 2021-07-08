@@ -1,0 +1,5 @@
+signal coef
+price.osci.4096 0.00006705103
+kdj.j.range.4096 -0.000003006654
+dbook.volume.open.ratio.4096 -0.0194455499
+ma.dif.10.volume.open.ratio.4096 -0.011770195

@@ -1,0 +1,12 @@
+{
+  "tickData_file":"input/data",
+  "tickModelConfig_file":"input/modelConfig",
+  "mainContract_file":"input/sysConfig/mainContract.txt", 
+  "productInfo_file":"input/sysConfig/productInfo.txt" ,
+  "productExchange_file":"input/sysConfig/productExchange.txt",
+  "cancel_file":"input/sysConfig/cancel.txt",
+  "outputIndicator_file":"output/outputIndicator",
+  "pred_file":"output/pred",
+  "tradeLog_file":"output/log/tradeLog.txt",
+  "mdLog_file":"output/log/mdLog.txt"
+}
